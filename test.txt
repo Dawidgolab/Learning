@@ -1,0 +1,6 @@
+Mam 24 lata
+Pochodze z Myœlenic
+Studiuje Informatyke na uczelni WSZiB w Krakowie
+pomys³y na programy:
+1. program do generowania hase³
+2. program do tworzenia fiszek
