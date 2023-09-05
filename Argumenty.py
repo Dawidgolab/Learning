@@ -31,3 +31,14 @@ def function_timer(func,arg,how_many_times = 1):
     return sum
 
 print(function_timer(add,num1))
+
+def adding(count = 1):
+    total = 0
+    for i in range(count):
+        number = int(input(str(i+1) + " number:"))
+        total += number
+    return total
+
+counter = int(input("give the number of the count: "))
+
+print(adding(counter))
