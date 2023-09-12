@@ -57,7 +57,7 @@ greet(message="hello",name = "alicja")
 ------------------------------------------------------------
 '''
 #multivariate arguments
-# * - we can send multiple arguments to (values), but they cannot be named(tuple)
+# * [it is very similar to listi mean this is kind of list]- we can send multiple arguments to (values), but they cannot be named(tuple)
 # ** -  we can sent many arguments into the (value) but the have to be named(dictionary)
 #!! Arguments that are not named must come before the named ones
 
