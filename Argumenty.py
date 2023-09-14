@@ -61,7 +61,7 @@ greet(message="hello",name = "alicja")
 # ** -  we can sent many arguments into the (value) but the have to be named(dictionary)
 #!! Arguments that are not named must come before the named ones
 
-import time
+'''import time
 
 def check(num1,container):
     if num1 in container:
@@ -94,4 +94,25 @@ time_checkset = time_measure(check, 103, setContainer, how_many_times=50000)
 time_checklist = time_measure(check, 203, listContainer, how_many_times=50000)
 
 print("Czas wykonania checkset:", time_checkset)
-print("Czas wykonania checklist:", time_checklist)
+print("Czas wykonania checklist:", time_checklist)'''
+
+#global range vs local range
+# the global function is more important than local
+
+def add1():
+    c = 5 #This c has local range
+    return c
+
+c = 1
+
+print(f"Zmienna lokalna : {add1()}")
+print(f"Zmienna globalna:  {c}")
+
+#useing the global value in function but it is not good practise
+def add2():
+    global a # we have variable a from global range
+    a = a + 3
+    print(a)
+
+a = 1
+add2()
