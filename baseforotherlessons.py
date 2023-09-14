@@ -23,9 +23,12 @@ def sum3(myNum):
         list.append(num)
     return (list[0] + list[-1]) /2 * myNum
 
-#fourth way patter
-def sum4(myNum):
-    return (1 + myNum) /2 * myNum
+#fourth way patter where we use the global variable in local variable
+num = 4
+def sum4():
+    global num
+    num = 8
+    return (1 + num) /2 * num
 
 # finish
 def finish(start):
@@ -42,9 +45,9 @@ we write the name of the secound function with our one argument which we assigne
  in the main fucntion 
 '''
 
-def function_timer(func,arg):
+def function_timer(func):
     start = time.perf_counter()
-    func(arg)
+    func()
     end = time.perf_counter()
     return end - start
 
@@ -72,6 +75,6 @@ print("time of Patttern with list 3:",end - start,"\n")
 
 #time4
 
-print("result of Patttern 4:", sum4(myNum))
-print("time of Patttern 4:",function_timer(show_message)  ,"\n")
+print("result of Patttern 4:", sum4())
+print("time of Patttern 4:",function_timer(sum4)  ,"\n")
 
