@@ -116,3 +116,12 @@ def add2():
 
 a = 1
 add2()
+
+def add3(b,count = 2):
+    b = b + count
+    print(b)
+
+b = 1
+# we are downloading this global b becouse we have two arguments in def add3
+add3(b)
+print(b)
