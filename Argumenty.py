@@ -58,8 +58,6 @@ greet(message="hello",name = "alicja")
 '''
 #multivariate arguments
 # * [it is very similar to listi mean this is kind of list]- we can send multiple arguments to (values), but they cannot be named(tuple)
-# ** -  we can sent many arguments into the (value) but the have to be named(dictionary)
-#!! Arguments that are not named must come before the named ones
 
 '''import time
 
@@ -95,10 +93,49 @@ time_checklist = time_measure(check, 203, listContainer, how_many_times=50000)
 
 print("Czas wykonania checkset:", time_checkset)
 print("Czas wykonania checklist:", time_checklist)'''
+# ** -  we can sent many arguments into the (value) but the have to be named(dictionary)
+
+# #!! Arguments that are not named must come before the named ones
+print("!!!!Examples with two stars **!!!!")
+
+print("#1")
+def print_kwargs(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_kwargs(name='John', age=25)
+print_kwargs(name='Alice', city='Paris', job='Engineer')
+print()
+
+
+#2
+print("#2")
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'd': 4}
+
+merged_dict = {**dict1, **dict2}
+print(merged_dict)
+print()
+
+
+#3
+print("#3")
+
+def configure_system(**settings):
+    for key, value in settings.items():
+        print(f"Setting {key} to {value}")
+
+system_settings = {'resolution': '1920x1080', 'volume': 75, 'theme': 'dark'}
+configure_system(**system_settings)
+print("\n\n\n")
+
+
+
+
 
 #global range vs local range
 # the global function is more important than local
-
+print("Locla and global variable!!!")
 def add1():
     c = 5 #This c has local range
     return c
