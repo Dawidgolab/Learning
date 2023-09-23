@@ -61,38 +61,26 @@ print()
 
 
 
-#Unwanted changes in funtion(shallow and deep copying)
+#Shallow and Deep copying - we use it when we want to make a changes
 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!shallow and deep copying\n")
 
-print("Shallow copying")
-def evil_function(toBeDestroyedList):
-    toBeDestroyedList[0] = 4
-    print(f"Copied list : {toBeDestroyedList}")
-
-mylist = [1,4,2,1,53,3]
-
-# shallow copying(it used to immutable)
-evil_function(mylist.copy())
-
-print(f"Non Copied list: {mylist}\n\n")
-
-#deep
-print("Deep copying")
-
 import copy
-def evil_function2(toBeDestroyedList2):
-    toBeDestroyedList2[0][0] = 4
-    print(f"Copied list with deep copying : {toBeDestroyedList2}")
 
-mylist2 = [[1,2],[3,4],[5,6]]
+old_list = [[1,2,3],[4,5,6],[7,8,9]]
+
+new_copy_list1 = copy.deepcopy(old_list)
+new_copy_list2 = old_list.copy()
+
+new_copy_list1[0][2] = 'c'
+new_copy_list2[0][2] = 'd'
+
+
+print(f"Old list: {old_list}")
+print(f"New list with shallow copy{new_copy_list2}")
+print(f"New list with deep copy: {new_copy_list1}")
 
 # deep copying(it used to mutable because shallow copying doesnt
 # work because we change everything but not only one list)
-evil_function2(copy.deepcopy(mylist2))
-
-print(f"Non Copied list: {mylist2}")
-
-
 # instead of copy we can use :
 # 1. list(mylist) e.g.
-# 2. mylist[:] (mylist[0:3] - wycinanie elementów z listy)
+# 2. mylist[:] (mylist[0:3] - cutting items from the list )
