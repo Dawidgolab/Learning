@@ -31,22 +31,49 @@ def all_even(list):
 
 
 
-print("list 1:")
+print("list 1 - any:")
 if (any_even(list1)):
     print("Yes, there is even number\n")
 else:
     print("No , there isn't \n")
 
-print("list 2")
+print("list 2 - any:")
 if (any_even(list2)):
     print("Yes, there is even number\n")
 else:
     print("No , there isn't even number \n")
 
-print("list 3")
+print("list 3 - all:")
 if (all_even(list3)):
     print("Yes, there are all even number\n")
 else:
     print("No , there aren't even number \n")
 
 
+# 2
+# Use the all() function to specify whether the person has the required skill set.
+
+
+
+
+john = {
+    'name': 'John Doe',
+    'age': 30,
+    'skills': ['Python', 'JavaScript', 'C++']
+}
+
+jane = {
+    'name': 'Jane Smith',
+    'age': 25,
+    'skills': ['Python', 'Java']
+}
+
+requerd_skills = ['Python','JavaScript' ]
+
+def has_required_skills(person, skills):
+    return all([skill in person['skills'] for skill in skills])
+
+
+
+print("John:",has_required_skills(john, requerd_skills))
+print("Jane:",has_required_skills(jane, requerd_skills))
