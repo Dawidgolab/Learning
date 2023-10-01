@@ -41,3 +41,29 @@ for i in range(1,11):
     print(f"Random number {i}: {number}")
     
 '''
+# task - The weapon has a 50 percent chance to inflicting damage (write in )
+
+#we Import Counter
+from collections import Counter
+
+# function that determines hit or miss
+def will_weapon_hit(weaponChanceToHitPercentage):
+    isHitChance = random.uniform(0,100)
+    if (isHitChance < weaponChanceToHitPercentage):
+        return "Hit"
+    else:
+        return "Miss"
+
+# we created the list that will store the hits or misses
+listHit = []
+x = 0
+
+while x < 100:
+    x += 1
+    listHit.append(will_weapon_hit(50))
+
+# count the number of 'hits' and 'misses' using the 'Counter' library through the dictionary
+dictionaryHit = Counter(listHit)
+
+print(listHit)
+print(dictionaryHit)
