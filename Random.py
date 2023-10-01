@@ -41,7 +41,7 @@ for i in range(1,11):
     print(f"Random number {i}: {number}")
     
 '''
-# task - The weapon has a 50 percent chance to inflicting damage (write in )
+# task - The weapon has a 50 percent chance to inflicting damage
 
 #we Import Counter
 from collections import Counter
