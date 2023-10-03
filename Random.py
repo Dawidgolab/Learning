@@ -66,4 +66,15 @@ while x < 100:
 dictionaryHit = Counter(listHit)
 
 print(listHit)
-print(dictionaryHit)
+print(dictionaryHit,"\n")
+
+#choice and choices
+#choice - Return a random item
+#choices - returns a list of items and has more capabilities
+list =  [1,2,3,4,5,6,7,8,9,10]
+event = ["death","win","loss","loss of points","loss of life"]
+
+#task - choices = often , sometimes, rarely, hardly ever
+prizesOfTheBox = ["green","orange","purple","gold"]
+
+print(Counter(random.choices(prizesOfTheBox,[0.8, 0.15, 0.04, 0.01],k = 100)))
