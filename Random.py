@@ -9,7 +9,6 @@ randrange(0,15,2) - even numbers from the pool (0,2,4 ... 14)
 
 randint(0,4) [from 0, to 4]
 '''
-import random
 
 #uniform
 '''x = 0
@@ -42,9 +41,12 @@ for i in range(1,11):
     
 '''
 # task - The weapon has a 50 percent chance to inflicting damage
-
 #we Import Counter
+
+import random
 from collections import Counter
+
+
 
 # function that determines hit or miss
 def will_weapon_hit(weaponChanceToHitPercentage):
