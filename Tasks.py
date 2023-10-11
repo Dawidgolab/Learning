@@ -19,7 +19,7 @@ print(randomNumbers(lottoList))'''
 2.Each time you have a chance to encounter a chest or nothing in your path.
 3. the chests have different colors
 4. the color of a chest indicates its rarity:
-- green - 75
+- green - 75%
 - Orange - 20%
 - Purple - 4%
 - Gold (legendary) - 1%
@@ -31,3 +31,27 @@ print(randomNumbers(lottoList))'''
 - purple - 9000
 - gold - 16000
 '''
+
+import random
+
+chests = ['Green','Orange','Purple','Gold',]
+Prize = ["You have draw a chest" ,"you have draw nothing"]
+
+
+print("Welcome in my game called Chamber")
+print("you have only 5 steps to make,"
+      "see yourself how much gold you gonna acquire till the end !!!")
+
+gamerChoice = 1
+
+while gamerChoice <= 5:
+    gamerChoice += 1
+    step = input("Do you want to move forward:  ")
+    if step == 'yes':
+        print(random.choice(Prize))
+    elif step == 'no':
+        break
+        print("Good bye")
+    else:
+        gamerChoice -= 1
+        continue
