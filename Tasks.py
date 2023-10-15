@@ -34,9 +34,9 @@ print(randomNumbers(lottoList))'''
 
 import random
 
-chests = ['Green','Orange','Purple','Gold',]
-Prize = ["You have draw a chest" ,"you have draw nothing"]
 
+Prize = ["You have draw a chest" ,"you have draw nothing"]
+Chest = ['Green','Orange','Purple','Gold']
 
 print("Welcome in my game called Chamber")
 print("you have only 5 steps to make,"
@@ -44,14 +44,23 @@ print("you have only 5 steps to make,"
 
 gamerChoice = 1
 
-while gamerChoice <= 5:
+while gamerChoice <= 8:
     gamerChoice += 1
-    step = input("Do you want to move forward:  ")
+    step = input("Do you want to move forward (please select yes/no):  \n")
+#Main option 'yes'
     if step == 'yes':
-        print(random.choice(Prize))
+        print("Great , let's see what you got ...")
+        stepYes = random.choice(Prize)
+        print(stepYes)
+        if stepYes == Prize[0]:
+            importanceOfTheBox = random.choices(Chest,[75,20,4,1],k = 100)
+            print("The chest color is :",random.choice(importanceOfTheBox))
+#Finish the program
     elif step == 'no':
         break
         print("Good bye")
+#What we use the other options
     else:
+        print("You've chosen the wrong option, try again:\n")
         gamerChoice -= 1
         continue
