@@ -35,32 +35,48 @@ print(randomNumbers(lottoList))'''
 import random
 
 
-Prize = ["You have draw a chest" ,"you have draw nothing"]
-Chest = ['Green','Orange','Purple','Gold']
+myAccount = 0
+Prize = ["Congratulations! You've found a chest!", "Unfortunately, you found nothing."]
 
-print("Welcome in my game called Chamber")
-print("you have only 5 steps to make,"
-      "see yourself how much gold you gonna acquire till the end !!!")
+
+Chest1 = {'Color':'Green', 'Points': 1000},
+Chest2 = {'Color':'Orange', 'Points': 4000},
+Chest3 = {'Color':'Purple' ,'Points': 9000},
+Chest4 = {'Color':'Gold', 'Points': 16000}
+Chests = [Chest1,Chest2,Chest3,Chest4]
+
+print("Welcome in my game")
+print("You have only 5 moves left. Let's see how much treasure you can uncover!")
+
 
 gamerChoice = 1
 
-while gamerChoice <= 8:
+while gamerChoice <= 10:
+    print(f"Move {gamerChoice}:")
+    step = input("Do you wish to move forward? (Type 'yes' or 'no'):  \n")
     gamerChoice += 1
-    step = input("Do you want to move forward (please select yes/no):  \n")
+
 #Main option 'yes'
     if step == 'yes':
-        print("Great , let's see what you got ...")
-        stepYes = random.choice(Prize)
-        print(stepYes)
-        if stepYes == Prize[0]:
-            importanceOfTheBox = random.choices(Chest,[75,20,4,1],k = 100)
-            print("The chest color is :",random.choice(importanceOfTheBox))
+        print("Alright, let's see what destiny has in store for you...")
+        percentageStep = random.choices(Prize,[60,40],k = 100)
+        stepYesOrNo = random.choice(percentageStep)
+        print(stepYesOrNo)
+
+        if stepYesOrNo == Prize[0]:
+            percentageOfTheBox = random.choices(Chests,[75,20,4,1],k = 100)
+            kindOfTheBox = random.choice(percentageOfTheBox)
+            print("You've discovered :", kindOfTheBox)
+
+
+
 #Finish the program
     elif step == 'no':
         break
-        print("Good bye")
-#What we use the other options
+        print("Goodbye! Thanks for playing.")
+
+#What if we use the other options
     else:
-        print("You've chosen the wrong option, try again:\n")
+        print("Sorry, you've selected an invalid option. Please try again:\n")
         gamerChoice -= 1
         continue
