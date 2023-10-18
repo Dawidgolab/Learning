@@ -11,3 +11,13 @@ def evenNumbers(list):
     return [number for number in list if number % 2 == 0]
 
 print(Counter(evenNumbers(list)))
+
+#Approximate funtion
+
+import random
+def findApproximate(value,percentRange):
+    lowestValue = value - (value * percentRange )/100
+    higherValue = value + (value * percentRange) / 100
+    return random.randint(lowestValue,higherValue)
+
+print(findApproximate(1000,10))
