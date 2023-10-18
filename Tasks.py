@@ -67,8 +67,10 @@ while gamerChoice <= 5:
             percentageOfTheBox = random.choices(Chests,[75,20,4,1],k = 100 )
             kindOfTheBox = random.choice(percentageOfTheBox)
             print("You've discovered :", kindOfTheBox['Color'])
-
-
+            myAccount += kindOfTheBox['Points']
+            print("Added points to my account!!!")
+            if gamerChoice > 5:
+                print("My points scored:", myAccount)
 
 #Finish the program
     elif step == 'no':
