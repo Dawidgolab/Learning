@@ -32,7 +32,7 @@ print(randomNumbers(lottoList))'''
 - gold - 16000
 '''
 
-import random
+'''import random
 
 
 myAccount = 0
@@ -82,3 +82,4 @@ while gamerChoice <= 5:
         print("Sorry, you've selected an invalid option. Please try again:\n")
         gamerChoice -= 1
         continue
+'''

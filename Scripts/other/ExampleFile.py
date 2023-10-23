@@ -31,4 +31,3 @@ result = matrix[0][0] * matrix[1][1] * matrix[2][2] + \
 
 print(result)
 '''
-
