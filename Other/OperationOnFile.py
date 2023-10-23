@@ -11,3 +11,9 @@
  but if it does not exist, a new one will be created
 3. a - Append 
 '''
+
+a = 5
+
+file = open("test","w") #Handle
+file.write("Sample")
+file.close()
