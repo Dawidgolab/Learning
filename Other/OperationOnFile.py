@@ -20,6 +20,8 @@ file.close()
 '''
 
 
+
+'''
 try: # we try something
     file = open("test","w") #Handle
     file.write("Sample1")
@@ -30,3 +32,13 @@ try: # we try something
 # and finally we close the file
 finally:
     file.close()
+'''
+
+
+# better way than before when we have an error
+
+with open("test","w") as file:
+    file.write("Hello!")
+
+    print(0/0)
+    file.write("World!!!")
