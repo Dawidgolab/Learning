@@ -12,8 +12,21 @@
 3. a - Append 
 '''
 
-a = 5
 
+'''
 file = open("test","w") #Handle
 file.write("Sample")
 file.close()
+'''
+
+
+try: # we try something
+    file = open("test","w") #Handle
+    file.write("Sample1")
+
+    print(0/0) # we make the error
+    file.write("Sample2") # value after error will not be assigned
+
+# and finally we close the file
+finally:
+    file.close()
