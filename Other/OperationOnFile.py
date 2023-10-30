@@ -37,8 +37,37 @@ finally:
 
 # better way than before when we have an error
 
-with open("test","w") as file:
+'''with open("test","w") as file:
     file.write("Hello!")
 
     print(0/0)
-    file.write("World!!!")
+    file.write("World!!!")'''
+
+# splitlines funtion
+print("Splitlines funtion ->>>>>\n")
+
+with open("Oceans.txt","r",encoding="UTF-8") as file:
+    oceans = file.read().splitlines()
+    oceans1 = file.readline()
+
+print(oceans)
+print(f"encoding = {file.encoding}\n")
+print("----------------------------------------------------------------\n")
+
+
+# readline funtion
+print("Readline funtion ->>>>>\n")
+
+with open("Oceans.txt","r",encoding="UTF-8") as file:
+    oceans1 = file.readline()
+print(oceans1)
+print("----------------------------------------------------------------\n")
+
+# sample with  'for loop'
+print("Sample with  'for loop' ->>>>>\n")
+
+with open("Oceans.txt","r",encoding="UTF-8") as file:
+    for line in file:
+        print(line)
+print()
+print("----------------------------------------------------------------")
