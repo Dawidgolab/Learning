@@ -12,8 +12,6 @@ The primary goal of this notebook is the continuous improvement of my programmin
 ## Benefits:
 ### Progress Tracking: 
 This notebook allows me to track my learning progress, helping me understand the direction in which I'm developing my skills and knowledge.
-### Project Creation: 
-It's a place where I can experiment, create my projects, and play with new technologies.
 ### Analysis of Insights: 
 I store various insights and reflections related to solving programming challenges, aiding in the development of my analytical thinking.
 This is my virtual laboratory where I test, learn, and grow as a programmer. I'm opening this notebook to others who may find inspiration or information that helps them in their own learning journey.
