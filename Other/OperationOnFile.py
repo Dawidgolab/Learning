@@ -44,7 +44,7 @@ finally:
     file.write("World!!!")'''
 
 # splitlines funtion
-print("Splitlines funtion ->>>>>\n")
+'''print("Splitlines funtion ->>>>>\n")
 
 with open("Oceans.txt","r",encoding="UTF-8") as file:
     oceans = file.read().splitlines()
@@ -69,5 +69,17 @@ print("Sample with  'for loop' ->>>>>\n")
 with open("Oceans.txt","r",encoding="UTF-8") as file:
     for line in file:
         print(line)
+print()
+print("----------------------------------------------------------------")'''
+
+# tell and seek functions
+
+print("The 'tell' function tells us exactly where we are.  !!!\n")
+with open("Oceans.txt","r",encoding="UTF-8") as file:
+    print(f"1.{file.readline()} ---> Function tell: {file.tell()}")
+    print(f"2.{file.readline()} ---> Function tell: {file.tell()}\n")
+    print(f"We use the 'seek' function to return to the first line : {file.seek(0)}")
+    print(f"1.{file.readline()} ---> Function tell: {file.tell()}")
+
 print()
 print("----------------------------------------------------------------")
