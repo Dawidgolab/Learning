@@ -90,3 +90,25 @@ print("----------------------------------------------------------------")
 with open("Oceans.txt","a",encoding="UTF-8") as file:
     file.write("\nOthers")
 '''
+
+
+
+
+# Multiple modes to open the files
+'''
+r+ - to read and write 
+-> file.read and file.write
+
+w+ - to write and read () 
+-> /Compared to r+, it will delete the contents of an existing file or create a new one if it did not exist /
+
+
+a+ - 'eternal mode' 
+-> /add and read. if the file does not exist, it will be created/
+'''
+'''with open("Oceans.txt","a+",encoding="UTF-8") as file:
+    file.write("\nNext")
+    file.seek(0)
+    print(file.readline())
+    print(file.tell())
+    file.write("\nMy ocean!!!")'''
