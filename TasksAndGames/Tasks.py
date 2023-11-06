@@ -103,4 +103,33 @@ when there is no given name in the file names.txt, when you will
 write the names to the file names.txt'''
 
 
+fullName = []
 
+with open("imionanazwiska.txt", "r", encoding="UTF-8") as file:
+    for item in file:
+        fullName.append(tuple(item.replace('\n', '').split(" ")))
+
+print(fullName)
+#       print(name)
+#    for name in file:
+
+with open("imiona.txt", "w", encoding="UTF-8") as file:
+    for name in fullName:
+        first = name[0]
+        file.write(first + "\n")
+
+# FIRST OPTION OF 'nazwiska.txt'
+with open("nazwiska.txt", "w", encoding="UTF-8") as file:
+    for name in fullName:
+        try: #we try to do it
+            file.write(name[1] + "\n")
+        except IndexError: # In case any error appears, do so.
+            file.write("\n")
+
+# SECOUND OPTION OF 'nazwiska.txt'
+# with open("nazwiska.txt", "w", encoding="UTF-8") as file:
+#     for name in fullName:
+#         if (len(name) == 2):
+#             file.write(name[1] + "\n")
+#         else:
+#             file.write("THERE IS NO SURNAME" + "\n")
