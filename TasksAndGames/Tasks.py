@@ -83,3 +83,24 @@ while gamerChoice <= 5:
         gamerChoice -= 1
         continue
 '''
+
+
+#task 3
+
+'''
+EXERCISE:
+
+Load first and last names from a file named:
+imionanazwiska.txt
+
+1) split them to make a list of tuples, where the inner tuples are
+first name/name pairs
+2) save the first names to the file imiona.txt
+3) save the surenames to file nazwiska.txt
+
+Consider how to solve the problem,
+when there is no given name in the file names.txt, when you will
+write the names to the file names.txt'''
+
+
+
