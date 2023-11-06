@@ -74,7 +74,7 @@ print("----------------------------------------------------------------")'''
 
 # tell and seek functions
 
-print("The 'tell' function tells us exactly where we are.  !!!\n")
+'''print("The 'tell' function tells us exactly where we are.  !!!\n")
 with open("Oceans.txt","r",encoding="UTF-8") as file:
     print(f"1.{file.readline()} ---> Function tell: {file.tell()}")
     print(f"2.{file.readline()} ---> Function tell: {file.tell()}\n")
@@ -83,3 +83,10 @@ with open("Oceans.txt","r",encoding="UTF-8") as file:
 
 print()
 print("----------------------------------------------------------------")
+'''
+
+'''# Append
+
+with open("Oceans.txt","a",encoding="UTF-8") as file:
+    file.write("\nOthers")
+'''
