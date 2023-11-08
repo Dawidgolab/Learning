@@ -1,6 +1,7 @@
 #task 1
 '''Write a function that will simulate how the lotto works
 – you choose 6 unique numbers out of 49'''
+import os
 
 '''import random
 
@@ -102,7 +103,7 @@ Consider how to solve the problem,
 when there is no given name in the file names.txt, when you will
 write the names to the file names.txt'''
 
-
+'''
 fullName = []
 
 with open("imionanazwiska.txt", "r", encoding="UTF-8") as file:
@@ -124,7 +125,7 @@ with open("nazwiska.txt", "w", encoding="UTF-8") as file:
         try: #we try to do it
             file.write(name[1] + "\n")
         except IndexError: # In case any error appears, do so.
-            file.write("\n")
+            file.write("\n")'''
 
 # SECOUND OPTION OF 'nazwiska.txt'
 # with open("nazwiska.txt", "w", encoding="UTF-8") as file:
@@ -133,3 +134,27 @@ with open("nazwiska.txt", "w", encoding="UTF-8") as file:
 #             file.write(name[1] + "\n")
 #         else:
 #             file.write("THERE IS NO SURNAME" + "\n")
+
+
+
+
+#task 4
+'''
+- create a function to handle opening a file to load data
+- asks the user for the name of the file he wants to open to load data
+- if the file doesn't exist, output an appropriate message to it
+- if the file exists ,load the file's whole content and return as a result of the function
+'''
+
+
+'''def fileOpen(fileName):
+    try:
+        with open(fileName,'r',encoding="UTF-8") as file:
+            read = file.read()
+            print(read)
+    except FileNotFoundError:
+        print("No such file or directory")
+
+user_file = str(input("Give me the name of the file: "))
+
+fileOpen(user_file)'''

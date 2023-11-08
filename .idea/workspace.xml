@@ -7,8 +7,6 @@
     <list default="true" id="51bb4a33-6ff0-4398-90ee-d401873d279b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TasksAndGames/Tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/TasksAndGames/Tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TasksAndGames/imiona.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TasksAndGames/imiona.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TasksAndGames/nazwiska.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TasksAndGames/nazwiska.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +31,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Dawid/IICE-PYTHON/Project"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dawid/IICE-PYTHON/Project&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dawid\IICE-PYTHON\Project\Other" />
