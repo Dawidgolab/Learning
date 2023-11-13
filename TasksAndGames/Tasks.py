@@ -162,3 +162,6 @@ fileOpen(user_file)'''
 '''
 Write code that checks how often the word "cat" occurs in the file "text.txt"
 '''
+
+with open("tekst.txt","w",encoding="UTF-8") as file:
+    file.write("Kot jest bardzo fajnym zwierzęciem")
