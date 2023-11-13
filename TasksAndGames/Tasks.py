@@ -158,10 +158,52 @@ user_file = str(input("Give me the name of the file: "))
 
 fileOpen(user_file)'''
 
+
+
+
+
+
+
 # task 4
 '''
 Write code that checks how often the word "cat" occurs in the file "text.txt"
 '''
 
-with open("tekst.txt","w",encoding="UTF-8") as file:
-    file.write("Kot jest bardzo fajnym zwierzęciem")
+
+
+
+# First way
+'''with open("tekst.txt","r",encoding="UTF-8") as file:
+    String = "cat"
+    read = file.read()
+    print(f"Word 'kot' occured {read.count(String)} times")
+
+
+
+
+#secound way
+path = "tekst.txt"
+word = "cat"
+
+def checkWord(path,word):
+    with open(path,'r',encoding="UTF-8")as file:
+        read = file.read()
+        searched = read.count(word)
+        print(f"The word '{word}' occured {searched} times in {path}")
+checkWord(path,word)
+
+
+# third way
+path = "tekst.txt"
+word = "cat"
+
+try:
+    with open("path.txt",'r') as file:
+        read = file.read()
+        searched = read.count(word)
+        print(f"The word '{word}' occured {searched} times in {path}")
+except FileNotFoundError:
+    print("There are no such file!!!!")
+except PermissionError:
+    print("There are no permition")
+'''
