@@ -1,7 +1,6 @@
 #task 1
 '''Write a function that will simulate how the lotto works
 – you choose 6 unique numbers out of 49'''
-import os
 
 '''import random
 
@@ -158,3 +157,8 @@ with open("nazwiska.txt", "w", encoding="UTF-8") as file:
 user_file = str(input("Give me the name of the file: "))
 
 fileOpen(user_file)'''
+
+# task 4
+'''
+Write code that checks how often the word "cat" occurs in the file "text.txt"
+'''
