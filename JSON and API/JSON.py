@@ -36,18 +36,18 @@ with open("sample.json",'w',encoding="UTF-8") as file:
 ###############################################################################
 """
 {  
-   "title":"Ale ja nie będę tego robił!",
+   "title":"Zrobie to zawsze!",
    "release_year":1969,
    "won_oscar":true,
    "actors":[  
-      "Arkadiusz Włodarczyk",
-      "Wiolleta Włodarczyk"
+      "Dawid Gołąb",
+      "Alicja Gołąb"
    ],
    "budget":null,
    "credits":{  
-      "director":"Arkadiusz Włodarczyk",
-      "writer":"Alan Burger",
-      "animator":"Anime Animatrix"
+      "director" : "Dawid Gołąb",
+      "writer" : "Barry Cent",
+      "animator" : "Calvin Matrix"
    }
 }
 """
