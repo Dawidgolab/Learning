@@ -22,7 +22,7 @@ film = {
         "animator" : "Calvin Matrix"
     }
 }
-
+'''
 # dumps (String)
 encodedFilm = json.dumps(film,ensure_ascii=False)
 print(encodedFilm)
@@ -32,22 +32,19 @@ print(encodedFilm)
 
 with open("sample.json",'w',encoding="UTF-8") as file:
     json.dump(film,file,ensure_ascii=False)
-
+'''
 ###############################################################################
-"""
-{  
-   "title":"Zrobie to zawsze!",
-   "release_year":1969,
-   "won_oscar":true,
-   "actors":[  
-      "Dawid Gołąb",
-      "Alicja Gołąb"
-   ],
-   "budget":null,
-   "credits":{  
-      "director" : "Dawid Gołąb",
-      "writer" : "Barry Cent",
-      "animator" : "Calvin Matrix"
-   }
-}
-"""
+# Loaded
+# 1. json.loads(jsonstring) - store jsonstring for data of the phyton type
+# 2. json.load(filePointer) - loaded json from file and return as a result of the method data of the phyton type
+
+# 1
+encodedRetrievedMovie = '{"title": "Zrobie to zawsze!", "release_year": 1969, "won_oscar": true, "actors": ["Dawid Gołąb", "Alicja Gołąb"], "budget": null, "credits": {"director": "Dawid Gołąb", "writer": "Barry Cent", "animator" : "Calvin Matrix"}}'
+decodedMovie = json.loads(encodedRetrievedMovie)
+print(decodedMovie)
+
+# 2
+
+with open("sample.json",encoding="UTF-8") as file:
+    result = json.load(file) # we changed the json format to phyton format
+    print(result)
