@@ -1,0 +1,2 @@
+cat is a very cool animal
+cat is a boring animal
