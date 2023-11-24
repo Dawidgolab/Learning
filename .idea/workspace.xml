@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51bb4a33-6ff0-4398-90ee-d401873d279b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Other/test" beforeDir="false" afterPath="$PROJECT_DIR$/Other/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSON-pip-PyPi-API/pip-PyPi.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON-pip-PyPi-API/pip-PyPi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
@@ -35,10 +37,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Dawid/IIJE -JAVA/UniversityProject_Java_1"
+    "last_opened_file_path": "C:/Users/Dawid/IICE-PYTHON/Project/BaseFiles",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dawid\IICE-PYTHON\Project\BaseFiles" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dawid\IICE-PYTHON\Project\Other" />
       <recent name="C:\Users\Dawid\IICE-PYTHON\Project\Scripts\other" />
@@ -57,5 +66,9 @@
       <updated>1685861394135</updated>
     </task>
     <servers />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
