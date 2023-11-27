@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51bb4a33-6ff0-4398-90ee-d401873d279b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/JSON-pip-PyPi-API/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JSON-pip-PyPi-API/pip-PyPi.py" beforeDir="false" afterPath="$PROJECT_DIR$/JSON-pip-PyPi-API/pip-PyPi.py" afterDir="false" />
     </list>
