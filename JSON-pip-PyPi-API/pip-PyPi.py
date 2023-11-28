@@ -15,8 +15,6 @@ print(interia.status_code)
 import requests
 def serverRespond():
     webName = input("Give the URL adress: ") #user input
-    if not webName.startswith('https://') and not webName.startswith('http://'):
-        webName = 'https://' + webName # when it doesn't start with http.... then add it in front of the site name
 
     try:
         web = requests.get(webName) # URL
@@ -28,7 +26,8 @@ def serverRespond():
             print(f"ERROR!!! There is no such page!!!(code - {web.status_code})")
             with open("test.txt",'a+',encoding="UTF-8") as file: #we save the wrong site to the file
                 file.write(webName+"\n")
-    except requests.exceptions.RequestException: # exception due to lack of http....
+    except (requests.exceptions.RequestException,requests.exceptions.MissingSchema,
+            requests.exceptions.ConnectionError): # exception due to lack of http....
         print("ERROR!!! There is no such page!!!(code-404)")
         with open("test.txt",'a+',encoding="UTF-8") as file:
             file.write(webName+"\n")
