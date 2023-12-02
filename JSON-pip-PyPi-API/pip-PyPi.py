@@ -12,7 +12,7 @@ print(interia.status_code)
 #if it does not exist, then write these pages in the file and if it exists, then display it 'code 200'
 
 
-import requests
+'''import requests
 def serverRespond():
     webName = input("Give the URL adress: ") #user input
 
@@ -54,3 +54,9 @@ Select options: """)
         print("Wrong option, try again!!!")
         continue
 
+'''
+
+#task 2
+# Imagine that your boss has tasked you with opening 1,500 pages from his text file and filtering them to give him only the ones that work.
+# The boss wants you to save the working pages to a text file.
+# The boss has not yet sent you the file with the pages. All you know is that you will have to perform this task the next day.
