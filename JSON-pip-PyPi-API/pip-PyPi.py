@@ -57,6 +57,32 @@ Select options: """)
 '''
 
 #task 2
-# Imagine that your boss has tasked you with opening 1,500 pages from his text file and filtering them to give him only the ones that work.
+# Imagine that your boss has tasked you with opening e.g 1,500 pages from his text file and filtering them to give him only the ones that work.
 # The boss wants you to save the working pages to a text file.
 # The boss has not yet sent you the file with the pages. All you know is that you will have to perform this task the next day.
+
+import requests
+
+Bossfile = "test.txt"
+
+with open(Bossfile,'r',encoding="UTF-8") as file:
+    readFile = file.readlines()
+    for page in readFile:
+        try:
+            respond = requests.get(page.strip()) # strip - removed the white char
+            encodingPage = respond.status_code
+            if encodingPage == 200:
+                with open("GoodPage.txt",'a+',encoding="UTF-8") as good_file:
+                    GoodPage = good_file.write(page)
+        except (requests.exceptions.RequestException,requests.exceptions.MissingSchema,
+        requests.exceptions.ConnectionError):
+            print(f"ERROR!!! That page is wrong : {page}(code-404)")
+        except FileNotFoundError:
+            print("ERROR!!! The file 'test.txt' does not exist or cannot be found.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {str(e)}")
+
+
+
+
+
