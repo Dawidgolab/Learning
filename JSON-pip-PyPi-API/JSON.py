@@ -76,9 +76,9 @@ with open("sample.json",encoding="UTF-8") as file:
     result = json.load(file)
 pprint.pprint(result)
 '''
-
+#########################################################################################################
 # JSONplaceholder - alternate site for you future json
-import requests
+'''import requests
 
 r = requests.get("https://jsonplaceholder.typicode.com/todos")
 # print(r.text)
@@ -91,3 +91,54 @@ except json.decoder.JSONDecodeError:
     print("Error - there is no jason format!!!")
 else:
     print("Everything is fine")
+    '''
+###########################################################################################################
+# Data Processing
+import json
+import requests
+
+"""
+1:11
+2:8 
+3:10
+
+10:
+"""
+
+
+r = requests.get("https://jsonplaceholder.typicode.com/todos")
+
+def count_task_frequency(tasks):
+    taskFrequencyByUser = {}
+    for entry in tasks:
+        if (entry["completed"] == True):
+            try:
+                taskFrequencyByUser[entry["userId"]] += 1
+            except KeyError:
+                taskFrequencyByUser[entry["userId"]] = 1
+    return taskFrequencyByUser
+
+def get_user_with_top_completed_tasks(taskFrequencyByUser):
+    userIdWithMaxCompletedAmountTask = []
+    maxAmountOfCompletedTasks = max(taskFrequencyByUser.values())
+    for userId, numberOfCompletedTasks in taskFrequencyByUser.items(): # items add us the tuple to easier sort
+        if (numberOfCompletedTasks == maxAmountOfCompletedTasks):
+            userIdWithMaxCompletedAmountTask.append(userId)
+    return  userIdWithMaxCompletedAmountTask
+
+
+
+
+try:
+    tasks = r.json()
+except json.decoder.JSONDecodeError:
+    print("Error - there is no jason format!!!")
+else:# This is the place where we can proccesing data (we can write it after exept!!!!)
+    taskFrequencyByUser = count_task_frequency(tasks)
+    userWithTopCompletedTasks = get_user_with_top_completed_tasks(taskFrequencyByUser)
+    print(f"The winners are users with IDs:: {userWithTopCompletedTasks} ")
+
+
+
+
+
