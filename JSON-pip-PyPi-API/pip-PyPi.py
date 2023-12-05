@@ -5,7 +5,7 @@ To download the library reguests we open the pypi.org
 
 
 import requests
-interia = requests.get("https://www.interia.pl/")
+interia = requests.get("https://www.interia.pl/") # 'get' - connects with the adress url
 print(interia.status_code)
 """
 #task1 - we want to download a page and check if it exists

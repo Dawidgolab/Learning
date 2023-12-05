@@ -56,7 +56,7 @@ with open("sample.json",encoding="UTF-8") as file:
 # sort_keys = True - alphabetical sorting
 
 # indent = 4
-encodedFilm1 = json.dumps(film,ensure_ascii=False,indent=4)
+'''encodedFilm1 = json.dumps(film,ensure_ascii=False,indent=4)
 print(encodedFilm1)
 print("########################################")
 
@@ -75,3 +75,19 @@ import pprint
 with open("sample.json",encoding="UTF-8") as file:
     result = json.load(file)
 pprint.pprint(result)
+'''
+
+# JSONplaceholder - alternate site for you future json
+import requests
+
+r = requests.get("https://jsonplaceholder.typicode.com/todos")
+# print(r.text)
+
+#tasks = json.loads(r.text)
+try:
+    tasks = r.json()
+    print(tasks[0])
+except json.decoder.JSONDecodeError:
+    print("Error - there is no jason format!!!")
+else:
+    print("Everything is fine")
