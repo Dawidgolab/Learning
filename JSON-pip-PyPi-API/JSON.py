@@ -136,7 +136,18 @@ except json.decoder.JSONDecodeError:
 else:# This is the place where we can proccesing data (we can write it after exept!!!!)
     taskFrequencyByUser = count_task_frequency(tasks)
     userWithTopCompletedTasks = get_user_with_top_completed_tasks(taskFrequencyByUser)
-    print(f"The winners are users with IDs:: {userWithTopCompletedTasks} ")
+
+# Continue the task from other website(work on users)
+# 1 way
+
+r = requests.get("https://jsonplaceholder.typicode.com/users")
+users = r.json()
+
+for user in users:
+    if (user["id"] in userWithTopCompletedTasks):
+        print(f"The winners are users: {user['name']} ")
+        userWithTopCompletedTasks.remove(user["id"])
+
 
 
 
