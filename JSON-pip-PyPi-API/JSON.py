@@ -140,13 +140,23 @@ else:# This is the place where we can proccesing data (we can write it after exe
 # Continue the task from other website(work on users)
 # 1 way
 
-r = requests.get("https://jsonplaceholder.typicode.com/users")
+'''r = requests.get("https://jsonplaceholder.typicode.com/users")
 users = r.json()
 
 for user in users:
     if (user["id"] in userWithTopCompletedTasks):
         print(f"The winners are users: {user['name']} ")
         userWithTopCompletedTasks.remove(user["id"])
+'''
+# 2 way
+
+'''for userId in userWithTopCompletedTasks:
+    #r = requests.get("https://jsonplaceholder.typicode.com/users/" + str(userId))
+    r = requests.get("https://jsonplaceholder.typicode.com/users/" , params="id=" + str(userId)) # we add the parameter for str - userid
+    user = r.json()
+    #print(f"The winners are users: {user['name']} ")
+    print(f"The winners are users: {user[0]['name']} ")'''
+
 
 
 
