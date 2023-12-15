@@ -93,7 +93,7 @@ else:
     print("Everything is fine")
     '''
 ###########################################################################################################
-# Data Processing
+# Data Processing - this is task where we want to store the data from json file and select the usersID where "completed" = true and count this 'true'
 import json
 import requests
 
