@@ -140,26 +140,53 @@ else:# This is the place where we can proccesing data (we can write it after exe
 # Continue the task from other website(work on users)
 # 1 way
 
-'''r = requests.get("https://jsonplaceholder.typicode.com/users")
+'''
+r = requests.get("https://jsonplaceholder.typicode.com/users")
 users = r.json()
 
 for user in users:
     if (user["id"] in userWithTopCompletedTasks):
         print(f"The winners are users: {user['name']} ")
         userWithTopCompletedTasks.remove(user["id"])
-'''
+
 # 2 way
 
-'''for userId in userWithTopCompletedTasks:
+'''
+
+'''
+for userId in userWithTopCompletedTasks:
     #r = requests.get("https://jsonplaceholder.typicode.com/users/" + str(userId))
-    r = requests.get("https://jsonplaceholder.typicode.com/users/" , params="id=" + str(userId)) # we add the parameter for str - userid
+    r = requests.get("https://jsonplaceholder.typicode.com/users/" , params="id=" + str(userId)) # We connect with users - we provide parameters
     user = r.json()
     #print(f"The winners are users: {user['name']} ")
-    print(f"The winners are users: {user[0]['name']} ")'''
+    print(f"The winners are users: {user[0]['name']} ")
+'''
+
+# 3 way - download 2 records at the same time
+
+def change_list_into_conj_of_param(my_list,key="id"):
+    conj_param = key + "="
+    lastIterationNumber = len(my_list)
+    i = 0
+
+    for item in my_list:
+        i += 1
+        if (i == lastIterationNumber):
+            conj_param += str(item)
+        else:
+            conj_param += str(item) + "&" + key +"="
+
+    return conj_param
 
 
 
+conj_param = change_list_into_conj_of_param(userWithTopCompletedTasks)
+#conj_param = change_list_into_conj_of_param([1,2,3])
 
 
+r = requests.get("https://jsonplaceholder.typicode.com/users/" , params=conj_param) # We connect with users - we provide parameters
 
+users = r.json()
+for user in users:
+    print(f"The winner is : {user['name']}")
 
