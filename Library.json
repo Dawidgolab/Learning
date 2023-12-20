@@ -1,0 +1,88 @@
+{
+  "Biblioteka": [
+    {
+      "tytuł": "Wiedźmin",
+      "autor": "Andrzej Sapkowski",
+      "rok_publikacji": 1993,
+      "gatunek": "Fantasy"
+    },
+    {
+      "tytuł": "1984",
+      "autor": "George Orwell",
+      "rok_publikacji": 1949,
+      "gatunek": "Literatura dystopijna"
+    },
+    {
+      "tytuł": "Harry Potter i Kamień Filozoficzny",
+      "autor": "J.K. Rowling",
+      "rok_publikacji": 1997,
+      "gatunek": "Fantasy"
+    },
+    {
+      "tytuł": "Mistrz i Małgorzata",
+      "autor": "Michaił Bułhakow",
+      "rok_publikacji": 1967,
+      "gatunek": "Klasyczna literatura rosyjska"
+    },
+    {
+      "tytuł": "Wiedźmin2",
+      "autor": "Andrzej Sapkowski",
+      "rok_publikacji": 1993,
+      "gatunek": "Fantasy"
+    },
+    {
+      "tytuł": "1984",
+      "autor": "George Orwell",
+      "rok_publikacji": 1949,
+      "gatunek": "Literatura dystopijna"
+    },
+    {
+      "tytuł": "Harry Potter i Kamień Filozoficzny",
+      "autor": "J.K. Rowling",
+      "rok_publikacji": 1997,
+      "gatunek": "Fantasy"
+    },
+    {
+      "tytuł": "Mistrz i Małgorzata",
+      "autor": "Michaił Bułhakow",
+      "rok_publikacji": 1967,
+      "gatunek": "Klasyczna literatura rosyjska"
+    },
+    {
+      "tytuł": "Zabić drozda",
+      "autor": "Harper Lee",
+      "rok_publikacji": 1960,
+      "gatunek": "Literatura obyczajowa"
+    },
+    {
+      "tytuł": "Duma i uprzedzenie",
+      "autor": "Jane Austen",
+      "rok_publikacji": 1813,
+      "gatunek": "Romans"
+    },
+    {
+      "tytuł": "Lśnienie",
+      "autor": "Stephen King",
+      "rok_publikacji": 1977,
+      "gatunek": "Horror"
+    },
+    {
+      "tytuł": "Wilk z Wall Street",
+      "autor": "Jordan Belfort",
+      "rok_publikacji": 2007,
+      "gatunek": "Biografia"
+    },
+    {
+      "tytuł": "Przygody Sherlocka Holmesa",
+      "autor": "Arthur Conan Doyle",
+      "rok_publikacji": 1892,
+      "gatunek": "Kryminał"
+    },
+    {
+      "tytuł": "Władca Pierścieni: Drużyna Pierścienia",
+      "autor": "J.R.R. Tolkien",
+      "rok_publikacji": 1954,
+      "gatunek": "Fantasy"
+    }
+  ]
+}
