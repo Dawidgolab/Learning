@@ -96,26 +96,18 @@ else:
 # Data Processing - this is task where we want to store the data from json file and select the usersID where "completed" = true and count this 'true'
 import json
 import requests
+from collections import defaultdict # creating the dictionary with special values
 
-"""
-1:11
-2:8 
-3:10
-
-10:
-"""
 
 
 r = requests.get("https://jsonplaceholder.typicode.com/todos")
 
 def count_task_frequency(tasks):
-    taskFrequencyByUser = {}
+    taskFrequencyByUser = defaultdict(int)
     for entry in tasks:
         if (entry["completed"] == True):
-            try:
-                taskFrequencyByUser[entry["userId"]] += 1
-            except KeyError:
-                taskFrequencyByUser[entry["userId"]] = 1
+            taskFrequencyByUser[entry["userId"]] += 1
+
     return taskFrequencyByUser
 
 def get_user_with_top_completed_tasks(taskFrequencyByUser):
@@ -175,7 +167,6 @@ def change_list_into_conj_of_param(my_list,key="id"):
             conj_param += str(item)
         else:
             conj_param += str(item) + "&" + key +"="
-
     return conj_param
 
 
