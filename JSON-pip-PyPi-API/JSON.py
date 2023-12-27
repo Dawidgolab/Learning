@@ -26,7 +26,7 @@ film = {
 # dumps (String)
 encodedFilm = json.dumps(film,ensure_ascii=False)
 print(encodedFilm)
-
+# to convert a list of numbers into JSON with newline characters (\n).
 
 # dump (File)
 
