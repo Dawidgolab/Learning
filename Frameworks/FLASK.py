@@ -4,7 +4,7 @@ CREATING A SERVER:
 # we install the FLASK and next we import FLASK and render_template from flask.
 
 -->  __name__ -> In practice, when you use __name__ in the context of a Flask application,
-it is often used in the construction of a web application to determine the location of folders
+it is often used in the construction of a web application to determine(ustalic) the location of folders
 where HTML templates, static files, etc. are located.
 
 -->  template_folder and static_folder -> template_folder specifies the folder where the application's
@@ -30,10 +30,14 @@ the application.
 -> set FLASK_ENV=develompment
 -> we can run a program to check the server -> python file_name
 
+3. Error 304
+If you see multiple 304 response codes for static files,
+such as JavaScript (button-start.js) and CSS (MainPage.css),
+it means that the browser tried to download these files, but received a response that the files
+have not been modified since the last so download, they are already in the browser cache
 
 
-
-///////////!!!!!!!!!!SAMPLE CODE!!!!!!!!!//////////////////////
+///////////!!!!!!!!!!SAMPLE py. Flask CODE!!!!!!!!!//////////////////////
 
 from flask import Flask,render_template
 
