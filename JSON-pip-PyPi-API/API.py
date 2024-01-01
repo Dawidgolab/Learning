@@ -24,14 +24,19 @@ What we want to download:
 2. sort descending 
 3. from last week 
 4. category python 
-5. 
 '''
 
 import requests
 import json
+import pprint
 
 params = {
-    "site": "stackoverflow"
+    "site": "stackoverflow",
+    "sort" : "votes",
+    "order" : "desc",
+    "fromdate" : "2023-11-01",
+    "tagged" : "python",
+    "min" : 15
 }
 
 r = requests.get("https://api.stackexchange.com/2.3/questions/", params)
@@ -42,4 +47,4 @@ try:
 except json.decoder.JSONDecodeError:
     print("Invalid format!!!")
 else:
-    print(questions)
+    pprint.pprint(questions)
