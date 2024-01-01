@@ -18,6 +18,14 @@ which the app displays on your phone.
 """
 
 # task 1 -> download json from stackoverflow by means of API from stackexchange
+'''
+What we want to download:
+1. We want to questions with min 15 points
+2. sort descending 
+3. from last week 
+4. category python 
+5. 
+'''
 
 import requests
 import json
