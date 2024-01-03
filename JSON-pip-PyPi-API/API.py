@@ -20,10 +20,11 @@ which the app displays on your phone.
 # task 1 -> download json from stackoverflow by means of API from stackexchange
 '''
 What we want to download:
-1. We want to questions with min 15 points
+1. We want to questions with min 15 points votes
 2. sort descending 
-3. from last week 
+3. from last 2 months 
 4. category python 
+5. prove that is only python with "tags"
 '''
 
 import requests
@@ -47,4 +48,5 @@ try:
 except json.decoder.JSONDecodeError:
     print("Invalid format!!!")
 else:
-    pprint.pprint(questions)
+    for question in questions["items"]:
+        pprint.pprint(question["tags"])
