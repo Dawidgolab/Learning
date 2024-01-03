@@ -25,11 +25,14 @@ What we want to download:
 3. from last 2 months 
 4. category python 
 5. prove that is only python with "tags"
+6. with using the webbrowser open all this pages which they have all these tags 
 '''
 
 import requests
 import json
 import pprint
+import webbrowser
+
 
 params = {
     "site": "stackoverflow",
@@ -49,4 +52,5 @@ except json.decoder.JSONDecodeError:
     print("Invalid format!!!")
 else:
     for question in questions["items"]:
-        pprint.pprint(question["tags"])
+        webbrowser.open_new_tab(question["link"])
+
