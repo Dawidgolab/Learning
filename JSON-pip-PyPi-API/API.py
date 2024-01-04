@@ -32,13 +32,23 @@ import requests
 import json
 import pprint
 import webbrowser
+from datetime import datetime , timedelta # timedelta is like minus
+
+
+# time stamp - sign of the times
+# from 1 january 1970 we count how many seconds have passed since then
+
+timeBefore = timedelta(weeks=8)
+
+searchTime = datetime.today() - timeBefore
+
 
 
 params = {
     "site": "stackoverflow",
     "sort" : "votes",
     "order" : "desc",
-    "fromdate" : "2023-11-01",
+    "fromdate" : int(searchTime.timestamp()),
     "tagged" : "python",
     "min" : 15
 }
