@@ -15,6 +15,9 @@ it sends a query to the server, asking for current weather data for your locatio
 The server processes the query and returns a response with the weather forecast,
 which the app displays on your phone.
 
+-> endpoint in api - the place where we can download the something and make additional
+query parameters
+
 """
 
 # task 1 -> download json from stackoverflow by means of API from stackexchange
