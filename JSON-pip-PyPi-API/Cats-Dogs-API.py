@@ -7,22 +7,17 @@ import requests
 import json
 from pprint import pprint
 
-def param_cat():
-    params = {
-    "animal_type" : "cat",
-    "amount" : 5
-    }
-    return params
 
-def param_dog():
+def cat_dog(animal):
     params = {
-        "animal_type" : "dog",
+        "animal_type" : animal,
         "amount" : 5
     }
     return params
 
-def url_json(param):
-    r = requests.get('https://cat-fact.herokuapp.com/facts/random',param)
+
+def url_json(params):
+    r = requests.get('https://cat-fact.herokuapp.com/facts/random',params)
     try:
         facts = r.json()
     except json.decoder.JSONDecodeError:
@@ -33,16 +28,17 @@ def url_json(param):
 
 
 
-
 while True:
-    choice = int(input("Select 5 fact about : 1 - dogs or 2 - cats: "))
-#dogs
-    if choice == 1:
-        url_json(param_dog())
-        break
+    choice = int(input("Select 5 fact about : 1 - cats or 2 - dogs: "))
 #cats
+    if choice == 1:
+        animal = "cat"
+        url_json(cat_dog(animal))
+        break
+#dogs
     elif choice == 2:
-        url_json(param_cat())
+        animal = "dog"
+        url_json(cat_dog(animal))
         break
 #The next attempt
     else:
