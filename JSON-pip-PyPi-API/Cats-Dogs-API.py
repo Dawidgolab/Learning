@@ -54,4 +54,26 @@ Task 2
 
 
 
+import requests
+import webbrowser
+import json
+import pprint
 
+catsLimit = int(input("Input the cats limit: "))
+
+params = {
+    "limit" : catsLimit
+}
+
+link = requests.get("https://api.thecatapi.com/v1/images/search", params)
+
+try:
+    respond = link.json()
+except requests.RequestException as e:
+    print(f"Request failed: {e}")
+except json.JSONDecodeError as e:
+    print(f"JSON decoding failed: {e}")
+else:
+    for i,picture in enumerate(respond):
+        if i < catsLimit:
+            webbrowser.open_new_tab(picture["url"])
