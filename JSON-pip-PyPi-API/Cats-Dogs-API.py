@@ -1,7 +1,7 @@
 """
+Task 1
 1. Make a menu where we ask if I want to display facts about dogs or cats
 2. Display random 5 facts
-"""
 
 import requests
 import json
@@ -44,7 +44,13 @@ while True:
     else:
         print("Try again!!!")
         continue
+"""
 
+"""
+Task 2 
+1. Make a program which download 3 records about the cats
+2. After program start , display the url on the webside
+"""
 
 
 
