@@ -31,6 +31,7 @@ What we want to download:
 6. with using the webbrowser open all this pages which they have all these tags 
 '''
 
+"""
 import requests
 import json
 import pprint
@@ -66,4 +67,32 @@ except json.decoder.JSONDecodeError:
 else:
     for question in questions["items"]:
         webbrowser.open_new_tab(question["link"])
+
+"""
+
+#API KEY allows us for authorizaition(you its you)
+
+import requests
+import json
+import webbrowser
+
+from pprint import pprint
+
+
+
+params = {
+    "api_key" : "?",
+    "country" : "pl",
+    "year" : 2023,
+    "type" : "national"
+}
+
+r = requests.get("https://calendarific.com/api/v2/holidays",params)
+
+try:
+    content = r.json()
+except json.decoder.JSONDecodeError:
+    print("Invalid format")
+else:
+    pprint(content)
 

@@ -50,7 +50,6 @@ while True:
 Task 2 
 1. Make a program which download 3 records about the cats
 2. After program start , display the url on the webside
-"""
 
 
 
@@ -77,3 +76,4 @@ else:
     for i,picture in enumerate(respond):
         if i < catsLimit:
             webbrowser.open_new_tab(picture["url"])
+"""
