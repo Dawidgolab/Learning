@@ -69,8 +69,10 @@ else:
         webbrowser.open_new_tab(question["link"])
 
 """
+"""
+API KEY allows us for authorizaition(you its you
+-> connetion throught the header is more saver  
 
-#API KEY allows us for authorizaition(you its you)
 
 import requests
 import json
@@ -95,4 +97,24 @@ except json.decoder.JSONDecodeError:
     print("Invalid format")
 else:
     pprint(content)
+"""
 
+# -> connetion throught the header is more saver(Header - additional information which we can add to request)
+# live_EAP8fbe0T2he4TySQAFCG5umfvt4cp9S3Tp0E5dlj8bapHjuJx3y3a3rRgbHUIW1
+
+import requests
+import json
+import webbrowser
+from pprint import pprint
+import Sensitivedata.credentials
+
+
+
+r = requests.get(" https://api.thecatapi.com/v1/favourites/",headers=Sensitivedata.credentials.headers)
+
+try:
+    content = r.json()
+except json.decoder.JSONDecodeError:
+    print("Invalid format")
+else:
+    pprint(content)
