@@ -118,3 +118,21 @@ except json.decoder.JSONDecodeError:
     print("Invalid format")
 else:
     pprint(content)
+
+
+#user logs in and  gives the password
+
+#than we check that login and password is correct which is into the data base
+
+#we assume that the login went through correctly
+
+#we download form data base the userid and name - name or nick of the user
+
+# we need to write the userId and name in data base
+
+# after logging in we want to show the user what their favorite cats are using
+# our catAPI
+
+# we want to show him the posibilities about the adding
+# a new cats(THE RANDOM CATS so if he wants to add then he will add )
+# and we allow him to remove the cat form FAVOURITE CATS
