@@ -102,12 +102,11 @@ else:
 # -> connetion throught the header is more saver(Header - additional information which we can add to request)
 # live_EAP8fbe0T2he4TySQAFCG5umfvt4cp9S3Tp0E5dlj8bapHjuJx3y3a3rRgbHUIW1
 
-import requests
+'''import requests
 import json
 import webbrowser
 from pprint import pprint
 import Sensitivedata.credentials
-
 
 
 r = requests.get(" https://api.thecatapi.com/v1/favourites/",headers=Sensitivedata.credentials.headers)
@@ -120,10 +119,13 @@ else:
     pprint(content)
 
 
+'''
 #user logs in and  gives the password
-
+'''
+login = 'dawid'
+password = 123
+'''
 #than we check that login and password is correct which is into the data base
-
 #we assume that the login went through correctly
 
 #we download form data base the userid and name - name or nick of the user
@@ -136,3 +138,45 @@ else:
 # we want to show him the posibilities about the adding
 # a new cats(THE RANDOM CATS so if he wants to add then he will add )
 # and we allow him to remove the cat form FAVOURITE CATS
+
+import requests
+import json
+import webbrowser
+from pprint import pprint
+import Sensitivedata.credentials
+
+
+def get_json_content_from_response(response):
+    try:
+        content = response.json()
+    except json.decoder.JSONDecodeError:
+        print("Invalid format",response.text)
+    else:
+            return content
+
+
+def get_favourite_cats(userId):
+    params = {
+        "sub_id" : userId
+    }
+    r = requests.get(" https://api.thecatapi.com/v1/favourites/", params, headers=Sensitivedata.credentials.headers)
+    return get_json_content_from_response(r)
+
+def get_random_cat():
+
+    r = requests.get(" https://api.thecatapi.com/v1/images/search",
+                     headers=Sensitivedata.credentials.headers)
+
+    return get_json_content_from_response(r)
+
+
+
+userId = "asd2d4"
+name = "Dawid"
+
+favouriteCats = get_favourite_cats(userId)
+randomCat = get_random_cat()
+
+print("Give your login and password :")
+print("Welcome "+ name)
+print("Wait ... Is that your favourite cats ?", webbrowser.open_new_tab(randomCat[0]["url"]))
