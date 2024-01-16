@@ -170,13 +170,39 @@ def get_random_cat():
     return get_json_content_from_response(r)
 
 
+def add_favourite_cat(catId, userId):
+    catData = {
+        "image_id" : catId,
+        "sub_id" : userId
+     }
+    r = requests.post(" https://api.thecatapi.com/v1/favourites/",
+        json = catData,  headers=Sensitivedata.credentials.headers)
 
-userId = "asd2d4"
+    return get_json_content_from_response(r)
+
+
+
+
+userId = "daw2g4"
 name = "Dawid"
 
 favouriteCats = get_favourite_cats(userId)
 randomCat = get_random_cat()
 
 print("Give your login and password :")
-print("Welcome "+ name)
-print("Wait ... Is that your favourite cats ?", webbrowser.open_new_tab(randomCat[0]["url"]))
+print("Welcome "+ name + "\n")
+
+if favouriteCats:
+    for counter,cat in enumerate(favouriteCats,start=1):
+        print(counter,"my favourite cat -> " , cat["image"]["url"])
+print("\n\n")
+
+print("Wait ... I generate a random cat... ", randomCat[0]["url"],"\n")
+
+
+addToFavourites = input("Do you wanna add it to favorites? (T/N)\n")
+
+if(addToFavourites.upper() == 'T'):
+    print(add_favourite_cat(randomCat[0]["id"],userId))
+else:
+    print("Ok, bye!!!")
