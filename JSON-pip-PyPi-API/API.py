@@ -169,7 +169,7 @@ def get_random_cat():
 
     return get_json_content_from_response(r)
 
-
+# Adding to the server 'Post'
 def add_favourite_cat(catId, userId):
     catData = {
         "image_id" : catId,
@@ -181,20 +181,37 @@ def add_favourite_cat(catId, userId):
     return get_json_content_from_response(r)
 
 
+# Removing cats DELETE
+def remove_favourite_cat(userId, favouriteCatId):
+
+    r = requests.delete('https://api.thecatapi.com/v1/favourites/' + favouriteCatId,
+                     headers=Sensitivedata.credentials.headers)
+
+    return get_json_content_from_response(r)
+
+
 
 
 userId = "daw2g4"
 name = "Dawid"
+print("Your login and password is correct")
+print(f"Welcome {name} \n" )
 
-favouriteCats = get_favourite_cats(userId)
+
+
+
+
+
 randomCat = get_random_cat()
+favouriteCat = get_favourite_cats(userId)
 
-print("Give your login and password :")
-print("Welcome "+ name + "\n")
 
-if favouriteCats:
-    for counter,cat in enumerate(favouriteCats,start=1):
+
+if favouriteCat:
+    for counter,cat in enumerate(favouriteCat,start=1):
         print(counter,"my favourite cat -> " , cat["image"]["url"])
+
+
 print("\n\n")
 
 print("Wait ... I generate a random cat... ", randomCat[0]["url"],"\n")
@@ -205,4 +222,16 @@ addToFavourites = input("Do you wanna add it to favorites? (T/N)\n")
 if(addToFavourites.upper() == 'T'):
     print(add_favourite_cat(randomCat[0]["id"],userId))
 else:
-    print("Ok, bye!!!")
+    print("Ok, then...!!!")
+
+favouriteCatById = {
+    cat["id"] : cat["image"]["url"]
+    for cat in favouriteCat
+
+}
+print(favouriteCatById)
+
+
+idCatToRemove = input("Do you wanna remove the cat from you favourites? If yes give me its id:  ")
+
+print(remove_favourite_cat(userId,idCatToRemove))
