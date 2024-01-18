@@ -120,11 +120,17 @@ else:
 
 
 '''
+
+
+
+
+
+
+
+
+
+
 #user logs in and  gives the password
-'''
-login = 'dawid'
-password = 123
-'''
 #than we check that login and password is correct which is into the data base
 #we assume that the login went through correctly
 
@@ -138,6 +144,9 @@ password = 123
 # we want to show him the posibilities about the adding
 # a new cats(THE RANDOM CATS so if he wants to add then he will add )
 # and we allow him to remove the cat form FAVOURITE CATS
+
+
+
 
 import requests
 import json
@@ -192,46 +201,61 @@ def remove_favourite_cat(userId, favouriteCatId):
 
 
 
+
+
 userId = "daw2g4"
 name = "Dawid"
-print("Your login and password is correct")
-print(f"Welcome {name} \n" )
-
-
-
+print("!Your login and password is correct!")
+print(f"Welcome {name}!!!" )
 
 
 
 randomCat = get_random_cat()
 favouriteCat = get_favourite_cats(userId)
-
-
-
-if favouriteCat:
-    for counter,cat in enumerate(favouriteCat,start=1):
-        print(counter,"my favourite cat -> " , cat["image"]["url"])
-
-
-print("\n\n")
-
-print("Wait ... I generate a random cat... ", randomCat[0]["url"],"\n")
-
-
-addToFavourites = input("Do you wanna add it to favorites? (T/N)\n")
-
-if(addToFavourites.upper() == 'T'):
-    print(add_favourite_cat(randomCat[0]["id"],userId))
-else:
-    print("Ok, then...!!!")
-
 favouriteCatById = {
     cat["id"] : cat["image"]["url"]
     for cat in favouriteCat
-
 }
-print(favouriteCatById)
 
 
-idCatToRemove = input("Do you wanna remove the cat from you favourites? If yes give me its id:  ")
+while True:
 
-print(remove_favourite_cat(userId,idCatToRemove))
+    input("Press enter to check your favourites cat (Enter) ")
+
+    if favouriteCat:
+        for counter,cat in enumerate(favouriteCat,start=1):
+            print(f"My {counter} favourite cat -> " , cat["image"]["url"])
+
+        catGenerator = input("Do you wanna generate the random cat? (Y/N)")
+        if catGenerator.upper() == 'Y':
+            print("Wait ... I generate a random cat...")
+            print(f"... The cat was drawn is {randomCat[0]['url']}")
+
+            addToFavourites = input("Do you wanna add it to favorites? (Y/N)\n")
+            if(addToFavourites.upper() == 'Y'):
+                print(add_favourite_cat(randomCat[0]["id"],userId))
+                catToRemovechoice = input(f"Do you wanna remove the cat from you favourites? (Y/N)")
+                if catToRemovechoice.upper() == 'Y':
+                    idCatToRemove = input(f"There are yours cats id's {favouriteCatById} and tell me which you want to remove (give the cat's id: \n")
+                    print(remove_favourite_cat(userId,idCatToRemove))
+                    continue
+                else:
+                    print("So good bye!!!")
+                    break
+            else:
+                idCatToRemove = input(f"Ok so maybe, you wanna remove the cat from you favourites? If yes this is yours cats id's {favouriteCatById} and tell me which you want to remove:  ")
+                print(remove_favourite_cat(userId,idCatToRemove))
+                continue
+        else:
+            catToRemovechoice = input(f"Do you wanna remove the cat from you favourites? (Y/N)")
+            if catToRemovechoice.upper() == 'Y':
+                idCatToRemove = input(f"There are yours cats id's {favouriteCatById} and tell me which you want to remove (give the cat's id: \n")
+                print(remove_favourite_cat(userId,idCatToRemove))
+                continue
+            else:
+                print("So good bye!!!")
+                break
+
+    else:
+        print("You have no favourites cats!!!!")
+        break
