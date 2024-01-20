@@ -176,7 +176,7 @@ def get_random_cat():
     r = requests.get(" https://api.thecatapi.com/v1/images/search",
                      headers=Sensitivedata.credentials.headers)
 
-    return get_json_content_from_response(r)
+    return get_json_content_from_response(r)[0]
 
 # Adding to the server 'Post'
 def add_favourite_cat(catId, userId):
@@ -226,15 +226,15 @@ while True:
         for counter,cat in enumerate(favouriteCat,start=1):
             print(f"My {counter} favourite cat -> " , cat["image"]["url"])
 
-        catGenerator = input("Do you wanna generate the random cat? (Y/N)")
+        catGenerator = input("Do you wanna generate the random cat? (Y/N): ")
         if catGenerator.upper() == 'Y':
             print("Wait ... I generate a random cat...")
-            print(f"... The cat was drawn is {randomCat[0]['url']}")
+            print(f"... The cat was drawn is {randomCat['url']}")
 
-            addToFavourites = input("Do you wanna add it to favorites? (Y/N)\n")
+            addToFavourites = input("Do you wanna add it to favorites? (Y/N): \n")
             if(addToFavourites.upper() == 'Y'):
                 print(add_favourite_cat(randomCat[0]["id"],userId))
-                catToRemovechoice = input(f"Do you wanna remove the cat from you favourites? (Y/N)")
+                catToRemovechoice = input(f"Do you wanna remove the cat from you favourites? (Y/N): ")
                 if catToRemovechoice.upper() == 'Y':
                     idCatToRemove = input(f"There are yours cats id's {favouriteCatById} and tell me which you want to remove (give the cat's id: \n")
                     print(remove_favourite_cat(userId,idCatToRemove))
@@ -242,12 +242,15 @@ while True:
                 else:
                     print("So good bye!!!")
                     break
-            else:
-                idCatToRemove = input(f"Ok so maybe, you wanna remove the cat from you favourites? If yes this is yours cats id's {favouriteCatById} and tell me which you want to remove:  ")
+            elif (addToFavourites):
+                idCatToRemove = input(f"Ok so maybe, you wanna remove the cat from you favourites? If yes this is yours cats id's and tell me which you want to remove: {favouriteCatById,} \n but if you want to do nothing the press enter: ")
                 print(remove_favourite_cat(userId,idCatToRemove))
                 continue
+            else:
+                print("Good bye")
+                break
         else:
-            catToRemovechoice = input(f"Do you wanna remove the cat from you favourites? (Y/N)")
+            catToRemovechoice = input(f"Do you wanna remove the cat from you favourites? (Y/N): ")
             if catToRemovechoice.upper() == 'Y':
                 idCatToRemove = input(f"There are yours cats id's {favouriteCatById} and tell me which you want to remove (give the cat's id: \n")
                 print(remove_favourite_cat(userId,idCatToRemove))
