@@ -178,6 +178,15 @@ def get_random_cat():
 
     return get_json_content_from_response(r)
 
+def add_favoutite_cat(catId,userId):
+    catData = {
+        "image_id" : catId,
+        "sub_id" : userId
+    }
+    r = requests.post("https://api.thecatapi.com/v1/favourites/", json=catData,
+                     headers=Sensitivedata.credentials.headers)
+    return get_json_content_from_response(r)
+
 # 1
 userId = "dav123"
 name = "Dawid"
@@ -192,25 +201,51 @@ if password == Sensitivedata.credentials.password:
 
     while True:
         choice = input("""
+=======================================================================================        
 Select your option!!!
-1 - Display your favourites cats
-2 - Generate a random cat
-Select: """)
+1 -> Display your favourites cats
+2 -> Generate a random cat -> If you want we can add it here to your favourites
+3 -> Remove the cat
+4 -> Finish the program
+=======================================================================================  
+Select: \n""")
 
+#favorites cats get
         if choice == '1':
             favouriteCats = get_favourite_cats(userId)
-            print("Your favorite cat",favouriteCats,"\n")
+            for count,cat in enumerate(favouriteCats,start=1):
+                print(f"My {count} favourite cat: {cat}")
             continue
-
+#random cat get and adding to the favourites
         elif choice == '2':
             randomCat = get_random_cat()
             print("Randomly selected cat: " , randomCat[0]['url'])
-            continue
 
-        else:
+            # -> Display on the web site
+            displayRandomCatOnTheWebSite = input("Do you want to display this cat on the web site? Y/N \n")
+            if displayRandomCatOnTheWebSite.upper() == 'Y':
+                webbrowser.open_new_tab(randomCat[0]['url'])
+            else:
+                print("Okej so next question ...")
+
+            # -> Add it to favourite
+            addChoice = input("Do you want to add it to favoutites? T/N :\n")
+            if addChoice.upper() == 'Y':
+                print(add_favoutite_cat(randomCat[0]['id'],userId))
+            else:
+                print("So if you dont want to add it then please select new option again ")
+                continue
+#Remove the cat
+        elif choice == '3':
+            print()
+#Finish the program
+        elif choice == '4':
             print("Good bye!!!")
             break
-
+# Wrong choice
+        else:
+            print("Your choice was wrong try again ")
+        continue
 
 
 
