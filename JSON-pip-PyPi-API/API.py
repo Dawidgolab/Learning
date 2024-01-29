@@ -187,6 +187,15 @@ def add_favoutite_cat(catId,userId):
                      headers=Sensitivedata.credentials.headers)
     return get_json_content_from_response(r)
 
+def remove_favourite_cat(userId,favouriteCatIdToRemove):
+    r = requests.delete("https://api.thecatapi.com/v1/favourites/" + favouriteCatIdToRemove,
+                      headers=Sensitivedata.credentials.headers)
+    return get_json_content_from_response(r)
+
+def display_cats(favouriteCats):
+    for count,cat in enumerate(favouriteCats,start=1):
+        print(f"My {count} favourite cat: { cat['id'],cat['image']['url']}")
+
 # 1
 userId = "dav123"
 name = "Dawid"
@@ -200,6 +209,9 @@ if password == Sensitivedata.credentials.password:
     print("Access was granted!!!")
 
     while True:
+
+        favouriteCats = get_favourite_cats(userId)
+
         choice = input("""
 =======================================================================================        
 Select your option!!!
@@ -212,9 +224,7 @@ Select: \n""")
 
 #favorites cats get
         if choice == '1':
-            favouriteCats = get_favourite_cats(userId)
-            for count,cat in enumerate(favouriteCats,start=1):
-                print(f"My {count} favourite cat: {cat}")
+            display_cats(favouriteCats)
             continue
 #random cat get and adding to the favourites
         elif choice == '2':
@@ -229,7 +239,7 @@ Select: \n""")
                 print("Okej so next question ...")
 
             # -> Add it to favourite
-            addChoice = input("Do you want to add it to favoutites? T/N :\n")
+            addChoice = input("Do you want to add it to favoutites? Y/N :\n")
             if addChoice.upper() == 'Y':
                 print(add_favoutite_cat(randomCat[0]['id'],userId))
             else:
@@ -237,7 +247,10 @@ Select: \n""")
                 continue
 #Remove the cat
         elif choice == '3':
-            print()
+            catsAndTheirIds = input("To see your all cats which are into your list and their id's ( click 'enter' ) : ")
+            display_cats(favouriteCats)
+            catIdToRemove = input("To remove the cat , please give its id: ")
+            print(remove_favourite_cat(userId,catIdToRemove))
 #Finish the program
         elif choice == '4':
             print("Good bye!!!")
