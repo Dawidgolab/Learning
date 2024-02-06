@@ -5,7 +5,6 @@ Using this generator we can stop the function at the time of our choosing  and i
 -> we generate the even numbers one by onewhen we use the YIELD num (this is the function with the element which we want to display)
 -> after assigning a function name to a random variable, we use print(next('our function or variable')) to display it
 '''
-
 def evenNumbers():
     for num in range(400):
         if num % 2 == 0:
@@ -34,7 +33,6 @@ print(next(tenNumbers))
 print(next(tenNumbers))
 print(next(tenNumbers))
 print(next(tenNumbers))
-
 
 
 
