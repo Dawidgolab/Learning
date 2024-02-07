@@ -21,7 +21,7 @@ def multiplied_numb_by_themselves():
         x += 1
         yield x * x
 
-def list(multipliedNumbByThemselves,numberOfElements):
+def list_of_multiplied_numbers(multipliedNumbByThemselves,numberOfElements):
     multiplicationList = []
     for numb in range(numberOfElements):
         multiplicationList.append(next(multipliedNumbers))
@@ -30,8 +30,8 @@ def list(multipliedNumbByThemselves,numberOfElements):
 
 multipliedNumbers = multiplied_numb_by_themselves()
 
-firstList = list(multipliedNumbers,20)
+firstList = list_of_multiplied_numbers(multipliedNumbers,20)
 print("list with 20 elements: ", firstList)
 
-secondList = firstList + list(multipliedNumbers,30)
+secondList = firstList + list_of_multiplied_numbers(multipliedNumbers,30)
 print("List with 30 elements: ",secondList)
