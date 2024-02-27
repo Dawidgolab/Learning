@@ -35,7 +35,7 @@ with open("sample.json",'w',encoding="UTF-8") as file:
 '''
 ###############################################################################
 # Loaded
-# 1. json.loads(jsonstring) - store jsonstring for data of the phyton type
+# 1. json.loads(jsonstring) - store jsonstring(json file) for data of the phyton type
 # 2. json.load(filePointer) - loaded json from file and return as a result of the method data of the phyton type
 
 '''
