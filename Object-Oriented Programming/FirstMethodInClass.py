@@ -4,7 +4,6 @@
 class User:
     name = ""
     age = 0
-    name = "NULL"
 
     def print_age(self):
         print(f"Name: {self.name}, Age: {self.age}")
