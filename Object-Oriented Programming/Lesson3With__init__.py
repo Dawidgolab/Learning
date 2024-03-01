@@ -1,7 +1,8 @@
 '''
 __init__ -> initialization , it means that we set the start's value for attribute
+ - __init__ is where you specify what information you need to create a new thing (such as type and color) and what to do with it.
 
-In the other languages the init == constructor 
+ *In the other languages the init == constructor 
 '''
 
 class User:
