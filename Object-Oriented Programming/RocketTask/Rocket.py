@@ -22,7 +22,10 @@ class RocketBoard:
             rocketIndexToMove = randint(0,len(self.rockets) - 1 ) #random rocket
             self.rockets[rocketIndexToMove].move_up() # random rocket move up
 
-        for value ,rocket in enumerate(self.rockets,start=1):
-            print(value,rocket)
+        for value ,rocket in enumerate(self.rockets):
+            print(f"(Rocket index[{value}]) {rocket}")
         
         print("---------------------------------------------")
+
+    def __getitem__(self,key):
+        return self.rockets[key]

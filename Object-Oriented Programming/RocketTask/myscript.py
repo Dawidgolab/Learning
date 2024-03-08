@@ -1,6 +1,5 @@
 from Rocket import RocketBoard
 
-board = RocketBoard(2)
+board = RocketBoard(10)
 
-
-print(board.rockets[0].altitude)
+print(board[6])
