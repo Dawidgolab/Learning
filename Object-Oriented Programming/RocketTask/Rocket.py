@@ -3,6 +3,8 @@ from random import randint
 
 class Rocket:
 
+# there are the static fields
+    
     def __init__(self,speed=1):
         self.altitude = 0 #start altitude
         self.speed = randint(0,4)
@@ -27,5 +29,8 @@ class RocketBoard:
         
         print("---------------------------------------------")
 
-    def __getitem__(self,key):
+    def __getitem__(self,key): # we refer to the index 
         return self.rockets[key]
+    
+    def __setitem__(self,key,value): # we refer to the index but we also assign something to the value(e.g. from the index)
+        self.rockets[key].altitude = value

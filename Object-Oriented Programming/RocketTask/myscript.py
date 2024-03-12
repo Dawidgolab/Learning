@@ -2,4 +2,6 @@ from Rocket import RocketBoard
 
 board = RocketBoard(10)
 
-print(board[6])
+board[0] = 60
+
+print(board[0])
