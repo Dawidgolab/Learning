@@ -6,8 +6,8 @@ class Rocket:
 
 # there are the static fields
     
-    def __init__(self,speed=1):
-        self.altitude = 0 #start altitude
+    def __init__(self,speed=1,altitude = 0):
+        self.altitude = altitude #start altitude
         self.speed = randint(0,4)
         self.x = 0
         # make patrol function
@@ -18,10 +18,6 @@ class Rocket:
     def __str__(self): #function which visualize the object instead of ..at 0x... we can see the string
         return f"Rocket's current altitude: {self.altitude}"
     
-    def get_distance(self,rocket):
-        ab = (rocket.altitude - self.altitude) ** 2
-        bc = (rocket.altitude - self.x) ** 2
-        return sqrt(ab + bc)
 
 class RocketBoard:
     def __init__(self,amountOfRockets=5):
@@ -41,3 +37,9 @@ class RocketBoard:
     
     def __setitem__(self,key,value): # we refer to the index but we also assign something to the value(e.g. from the index)
         self.rockets[key].altitude = value
+
+    @staticmethod #static method without self
+    def get_distance(rocket1,rocket2):
+        ab = (rocket1.altitude - rocket2.altitude) ** 2
+        bc = (rocket1.altitude - rocket2.x) ** 2
+        return sqrt(ab + bc)
