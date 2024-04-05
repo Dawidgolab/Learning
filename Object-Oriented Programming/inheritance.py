@@ -1,6 +1,6 @@
 '''
 class parent - class child
-'''
+
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -24,3 +24,4 @@ cat.speak()  # Output: Whiskers says something.
 
 dog.wag_tail()  # Output: Buddy wags its tail.
 cat.purr()      # Output: Whiskers purrs softly.
+'''
