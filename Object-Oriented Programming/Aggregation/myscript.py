@@ -1,7 +1,7 @@
 '''
 Aggregation and Composition vs Inheritance
 '''
-class Rectangle:
+class Rectangle():
     def __init__(self, a, b):
         self.a = a
         self.b = b
@@ -16,7 +16,7 @@ class Square(Rectangle):
         super().__init__(a,a)
  
     def area(self):
-        return self.a ** 2
+        return self.count_surface_area() ** 2
  
 # ===========================================
  
