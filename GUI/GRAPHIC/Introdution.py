@@ -7,7 +7,7 @@ root = Tk()
 root.title("First GUI interface")
 root.geometry("500x500")
 
-# launch loop
+# launch
 # root.mainloop()
 
 # create the frame as a container for the other widgets
