@@ -11,7 +11,9 @@ app_width = 500
 app_height = 500
 center_window(root, app_width, app_height)
 
-def get_date():
+ 
+#pack() - we use it in horizontal and vertical settings
+ def get_date():
     data = datetime.datetime.now()
     data_label = Label(root, text=data, fg="red")
     data_label.pack() 
