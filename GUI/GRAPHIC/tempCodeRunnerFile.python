@@ -1,0 +1,25 @@
+from tkinter import *
+
+
+#create main screen
+root = Tk()
+
+#modify the window
+root.title("First GUI interface")
+root.iconbitmap(r'C:\Users\Dawid\IICE-PYTHON\Project\GUI\GRAPHIC\photo\icon.ico')
+root.config(background='grey')
+
+app_width = 500
+app_height = 500
+
+# Download the width and height of the screen
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+
+# Calculation of the coordinates of the window position
+x = screen_width // 2 - app_width // 2
+y = screen_height // 2 - app_height // 2
+
+#  Set the size and center the window
+root.geometry(f"{app_width}x{app_height}+{x}+{y}")
+

@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 #create main screen
 root = Tk()
 
